@@ -1,0 +1,76 @@
+{
+  "name": "dsh-remote-phone",
+  "version": "1.0.0",
+  "description": "DSH Remote: control the DeepSeek Harness on your PC from a native phone app. One-time pairing code -> long-lived JWT, an HTTP+WebSocket gateway on its own port (3080 by default), sessions/messages/workspaces REST API, approvals relayed to the phone, LAN & Cloudflare Quick Tunnel modes, revocable device sessions, and a whale-icon pairing panel inside the DSH Web GUI. The companion Android app lives in the same repository.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "assets",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "author": "REPLACE_WITH_YOUR_NAME",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/REPLACE_WITH_YOUR_ACCOUNT/dsh-remote.git"
+  },
+  "homepage": "https://github.com/REPLACE_WITH_YOUR_ACCOUNT/dsh-remote#readme",
+  "bugs": {
+    "url": "https://github.com/REPLACE_WITH_YOUR_ACCOUNT/dsh-remote/issues"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "remote",
+    "mobile",
+    "android",
+    "phone",
+    "pairing",
+    "gateway",
+    "jwt"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/qrcode": "^1.5.5",
+    "@types/ws": "^8.5.13",
+    "typescript": "^5.5.4"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig.client.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.client.json --noEmit",
+    "test": "npm run build && node tests/unit.mjs && node tests/standalone-smoke.mjs && node tests/mock-harness-e2e.mjs",
+    "e2e": "node tests/mock-harness-e2e.mjs",
+    "clean": "node -e \"require('node:fs').rmSync('lib',{recursive:true,force:true})\"",
+    "smoke": "node tests/standalone-smoke.mjs"
+  }
+}

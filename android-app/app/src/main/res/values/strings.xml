@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DSH Remote</string>
+    <string name="url_hint">粘贴地址或扫码配对</string>
+    <string name="action_connect">连接</string>
+    <string name="action_refresh">刷新</string>
+    <string name="action_scan">扫码</string>
+    <string name="action_more">更多</string>
+    <string name="action_reset">重置</string>
+    <string name="menu_reset">清除配对凭据</string>
+    <string name="menu_open_browser">用系统浏览器打开</string>
+    <string name="menu_recent">最近地址…</string>
+    <string name="menu_keep_screen_on">保持屏幕常亮</string>
+    <string name="scan_prompt">扫描电脑上的配对二维码</string>
+    <string name="need_url">请先扫码或输入地址</string>
+    <string name="reset_done">已清除配对凭据与本地缓存</string>
+    <string name="reset_confirm">清除配对凭据、Cookie 与本地缓存？下次需要重新扫码。</string>
+    <string name="error_title">打不开这个地址</string>
+    <string name="error_retry">重试</string>
+    <string name="recent_title">最近使用的地址</string>
+    <string name="status_connecting">连接中…</string>
+    <string name="status_ok">已连接</string>
+    <string name="status_failed">连接失败</string>
+</resources>

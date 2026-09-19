@@ -1,0 +1,21 @@
+# dsh-remote-phone — cordis bundle patch layer.
+#
+# One package, two halves:
+#   * host half (lib/index.js): pairing codes + JWT device sessions, the
+#     standalone HTTP+WS gateway (default port 3080), the /api/pair route
+#     family on the gateway, LAN/tunnel management, and the desktop control
+#     probe route registered on the official webServer.
+#   * browser half (lib/client.js): the floating DeepSeek whale button that
+#     opens the pairing panel (QR, LAN/公网 mode switch, device list + revoke).
+#
+# Installing the package into a dsh profile and restarting `dsh web` loads
+# the single plugin row below. Disable it any time by editing this file or
+# through the plugin inventory surface.
+- insert:
+    - id: dsh-remote
+      name: dsh-remote-phone
+      # config:                  # optional overrides, e.g.
+      #   enabled: true
+      #   port: 3080
+      #   bindLan: false         # bind 0.0.0.0 at boot (also toggleable in panel)
+      #   autoTunnel: false      # start a Cloudflare Quick Tunnel at boot
