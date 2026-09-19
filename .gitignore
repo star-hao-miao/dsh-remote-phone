@@ -1,34 +1,26 @@
-# Gradle files
-.gradle/
+# ── 构建产物与依赖 ──────────────────────────────────────────────
+node_modules/
 build/
-
-# Local configuration file (sdk path, etc)
-local.properties
-
-# Log/OS Files
-*.log
-
-# Android Studio generated files and folders
-captures/
-.externalNativeBuild/
-.cxx/
-*.aab
-*.apk
-output-metadata.json
-
-# IntelliJ
-*.iml
+.gradle/
 .idea/
-misc.xml
-deploymentTargetDropDown.xml
-render.experimental.xml
+*.iml
+local.properties
+lib/
+*.tsbuildinfo
 
-# Keystore files
-*.jks
-*.keystore
+# ── 本地工具链与测试环境（体积巨大，绝不入库）──────────────────
+.toolchain/
+.qa/
+.npm-cache/
 
-# Google Services (e.g. APIs or Firebase)
-google-services.json
+# ── 日志与系统文件 ──────────────────────────────────────────────
+*.log
+.DS_Store
+Thumbs.db
 
-# Android Profiling
-*.hprof
+# ── 说明 ────────────────────────────────────────────────────────
+# dist/ 里放的是构建好的 APK，**故意不忽略**：仓库要能直接下载到手机安装包。
+# 如果你更希望把 APK 挂到 GitHub Release（推荐，避免每次发版给 git 历史再加 25MB），
+# 就把下面两行取消注释。
+# dist/
+# !dist/.gitkeep
